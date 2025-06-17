@@ -9,4 +9,3 @@ if __name__ == '__main__':
     csv_parser.write_file("home_clean.csv", home_page.get_book_data_headers(), home_page.scrape_books_data_raw())
 
 
-

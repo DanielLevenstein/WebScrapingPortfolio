@@ -16,5 +16,6 @@ if __name__ == '__main__':
             clean_data = category_page.clean_books_data(books_data)
             file_name = category[NAME_INDEX]
             print(f"Writing {category[NAME_INDEX]} data")
-            csv_parser.write_data(file_name, category_page.get_book_data_headers(), books_data, clean_data)
+            csv_parser.write_data(file_name, category_page.get_book_data_headers(), books_data, clean_data, "books_by_category")
+
         index += 1
