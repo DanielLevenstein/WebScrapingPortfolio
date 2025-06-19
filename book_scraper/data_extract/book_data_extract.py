@@ -22,8 +22,7 @@ def get_book_data_headers():
     return ["Title", "Price", "Availability", "Rating", "Category"]
 
 def clean_books_data(books_data):
-    for(book_data) in books_data:
-        yield __clean_book_data(book_data)
+    return[__clean_book_data(book) for book in books_data]
 
 def __clean_book_data(book_data):
     clean_book_data = book_data.copy()
