@@ -21,10 +21,12 @@ def write_data(dataset_name, header_data, raw_data, clean_data, scraper_name=SCR
     if(scraper_name[-1] != "/" or scraper_name[-1] != "\\"):
         scraper_name += "/"
 
-    clean_file_name = clean_string(dataset_name) + "_clean.csv"
-    raw_file_name = clean_string(dataset_name) + "_raw.csv"
-    write_file(clean_file_name, header_data, clean_data, OUTPUT_DIR+scraper_name+CLEAN_DIR)
-    write_file(raw_file_name, header_data, raw_data, OUTPUT_DIR+scraper_name+RAW_DIR)
+    if raw_data is not None:
+        raw_file_name = clean_string(dataset_name) + "_raw.csv"
+        write_file(raw_file_name, header_data, raw_data, OUTPUT_DIR+scraper_name+RAW_DIR)
+    if clean_data is not None:
+        clean_file_name = clean_string(dataset_name) + "_clean.csv"
+        write_file(clean_file_name, header_data, clean_data, OUTPUT_DIR+scraper_name+CLEAN_DIR)
 
 
 
