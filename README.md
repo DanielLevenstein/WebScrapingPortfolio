@@ -12,8 +12,9 @@ Use web scraping to calculate the average rating and price of books from the tar
 ## 🛠️ Design
 
 Implement a Page Object Model for the following pages:
-- `home_page`: Extracts category links
-- `category_page`: Extracts book data from each category’s first page
+- `home_page`: Extracts book data and allows user change category.
+- `book_data_cleaner`: Cleans book data list and calculates stats from it.
+- `csv_parser`: Outputs python list as a csv file.
 
 ---
 

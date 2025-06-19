@@ -9,7 +9,7 @@ AVAILABLE_CSS = "p.availability"
 ARTICLE_CSS = "article"
 SIDE_CATEGORIES_CSS = "div.side_categories a"
 CURRENT_CATEGORY_CSS = "div.page-header h1"
-
+NEXT_PAGE_CSS = "ul.pager a"
 URL = "https://books.toscrape.com/catalogue/page-1.html"
 BASE_URL = "https://books.toscrape.com/catalogue/"
 
@@ -23,6 +23,7 @@ class HomePage(BasePage):
         book_data = []
         for book in books:
             book_data.append(self.__scrape_book_raw(book))
+
         return book_data
 
     def __get_book_elements(self):

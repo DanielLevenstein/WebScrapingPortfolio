@@ -1,6 +1,4 @@
 from collections import defaultdict
-from pdb import TESTCMD
-from typing import List
 
 import re
 
@@ -34,12 +32,11 @@ def get_stat_headers():
     return ["Average Price", "STD Price", "Average Rating", "STD Rating", "Category"]
 
 
-def get_stat_data(raw_books_data):
+def get_stat_data(books_data_clean):
     # casting input data to list to force program to calculate values
-    list_data = clean_books_data(raw_books_data)
     category_data = defaultdict(lambda: {"prices": [], "ratings": []})
 
-    for book in list_data:
+    for book in books_data_clean:
         price = book[PRICE_INDEX]
         rating = book[RATING_INDEX]
         category = book[CATEGORY_INDEX]
@@ -70,7 +67,7 @@ def get_stat_data(raw_books_data):
 
 
 if __name__ == '__main__':
-    test_data = [\
+    test_data = [
         ["Book Title 1 ",1.00, "In stock", 5, "Category"],
         ["Book Title 2", 2.00, "In stock", 4, "Category"],
         ["Book Title 3", 3.00, "In stock", 5, "Category"],
