@@ -1,5 +1,5 @@
 from book_scraper.pages.category_page import CategoryPage
-from book_scraper.data_extract.book_data_extract import get_book_data_headers, clean_books_data
+from book_scraper.data_extract.book_data_extract import get_book_data_headers, clean_books_data, get_stat_data, get_stat_headers
 from book_scraper.utils import csv_parser
 from book_scraper.pages import home_page
 
@@ -24,5 +24,7 @@ if __name__ == '__main__':
 
         index += 1
     all_data_scraper_name = "all_books"
-    all_data_clean = clean_books_data(all_data_raw)
-    csv_parser.write_data(all_data_scraper_name, get_book_data_headers(), all_data_raw, all_data_clean, all_data_scraper_name)
+    csv_parser.write_data(all_data_scraper_name, get_book_data_headers(), all_data_raw, None, all_data_scraper_name)
+
+    stats_data = get_stat_data(all_data_raw)
+    csv_parser.write_data("category_stats", get_stat_headers(), None, stats_data, all_data_scraper_name)

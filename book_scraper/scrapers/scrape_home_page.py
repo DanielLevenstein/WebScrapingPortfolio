@@ -9,3 +9,6 @@ if __name__ == '__main__':
     csv_parser.write_file("home_clean.csv", get_book_data_headers(), home_page.scrape_books_data_raw())
 
 
+
+    stats_data = get_stat_data(all_data_clean)
+    csv_parser.write_data("category_stats", get_stat_headers(), None, stats_data, all_data_scraper_name)
