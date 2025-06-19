@@ -1,23 +1,23 @@
 # Project: Book Category Analyzer 
 
-Goal: Calculate average rating and price of books using web scraping.
+## Goal: 
+Calculate average rating and price of books using web scraping for Target site: https://books.toscrape.com
+Steps: 
+* Extract the first page worth of books in all categories and export data to a csv file.
+* Calculate the average price and rating for each category and save that data to a new csv file.
 
-
-Target site: https://books.toscrape.com
-Goal: Extract the first page worth of books in all categories and export data to a csv file.
-Then: calculate the average price and rating for each category and save that data to a new csv file.
-
-Design:
+### Design:
 Create a page object for the following pages:
 home_page, category_page
 
-Output:
+### Output:
 Output the following data for books in each category. 
-Title,Price,Availability,Rating
+Title,Price,Availability,Rating,Category
 
-Cleaning: Clean raw price and rating data so it can be used for data analysis latter. 
+### Cleaning: 
+Clean raw price and rating data so it can be used for data analysis latter. 
 
-Data Analysis: In Progress
+### Data Analysis: 
 Calculate the following fields for each category:
 average_price,average_rating,std_price,std_rating
 
